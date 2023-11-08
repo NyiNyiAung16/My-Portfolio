@@ -163,14 +163,14 @@
                     <h3>FullStack Junior </br> Web Developer</h3>
                 </div>
             </div>
-           <a href="./cv/newCV.pdf" class="resumeDown" download="">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Get Resume
-           </a>
+           <button class="resumeDown" data-bs-toggle="modal" data-bs-target="#resumeModal" id="resumeDownloadTag" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Get Resume
+           </button>
         </div>
         <div class="col-lg-8">
             <div class="personalInformation mb-5" >
@@ -244,8 +244,33 @@
 
 <!-- End Contact Section -->
 
+<!-- Start Modal Section -->
+
+<div class="modal" id="resumeModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header d-flex align-items-center">
+                <h4 class="p-0 m-0">Are you sure to download?</h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn px-5 py-2 btn-warning"  data-bs-dismiss="modal" onclick="download(event)">Yes</button>
+                <button class="btn px-5 py-2 btn-danger" data-bs-dismiss="modal">NO</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Modal Section -->
+
 
     <!-- bootstrap css1 js1 -->
     <script src="./lbs/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const resumeModal = document.querySelector('#resumeModal');
+        function download(e){
+            location.href = './cv/newCV.pdf';
+        }
+    </script>
 </body>
 </html>
